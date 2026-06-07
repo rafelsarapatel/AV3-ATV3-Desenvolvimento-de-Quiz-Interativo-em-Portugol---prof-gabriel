@@ -1,0 +1,446 @@
+programa {
+  funcao inicio() {
+    inteiro opcao = 0
+    inteiro pontuacao = 0
+    inteiro dificuldade = 1
+    cadeia nome = ""
+    cadeia idioma = "Portugues"
+    cadeia volume = "ON"
+    cadeia resposta = ""
+
+    enquanto(opcao != 5){
+      escreva("===== QUIZ DE FUTEBOL =====\n")
+      escreva("1 - Comecar Quiz\n")
+      escreva("2 - Rank\n")
+      escreva("3 - Configuracao\n")
+      escreva("4 - Regras\n")
+      escreva("5 - Sair\n")
+
+      escreva("Escolha uma opcao: ")
+      leia(opcao)
+
+      limpa()
+
+      escolha(opcao){
+
+        caso 1:
+          se(nome == ""){
+            escreva("Digite seu nome: ")
+            leia(nome)
+
+            limpa()
+
+            escreva("\nEscolha a dificuldade:\n")
+            escreva("1 - Facil\n")
+            escreva("2 - Medio\n")
+            escreva("3 - Dificil (sem gracinha)\n")
+
+            leia(dificuldade)
+
+            limpa()
+          }
+
+          escreva("\nBem-vindo, ", nome, "!\n")
+
+          se(dificuldade == 1){
+            escreva("Modo Facil selecionado!\n")
+          }senao{
+            se(dificuldade == 2){
+              escreva("Modo Medio selecionado!\n")
+            }senao{
+              escreva("Modo Dificil selecionado!\n")
+            }
+          }
+
+          escreva("Iniciando Quiz...\n")
+
+          inteiro pergunta = 1
+          pontuacao = 0
+
+          // ========== PERGUNTAS MODO FACIL ==========
+          se(dificuldade == 1){
+            enquanto(pergunta <= 5){
+              limpa()
+
+              se(pergunta == 1){
+                escreva("===== PERGUNTA 1 =====\n")
+                escreva("Qual selecao venceu a Copa do Mundo de 2002?\n")
+                escreva("A) Argentina\n")
+                escreva("B) Brasil\n")
+                escreva("C) Alemanha\n")
+                escreva("D) Italia\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "B" ou resposta == "b"){
+                  pontuacao = pontuacao + 10
+                  escreva("Correto! +10 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era B) Brasil\n")
+                }
+              }
+
+              se(pergunta == 2){
+                escreva("===== PERGUNTA 2 =====\n")
+                escreva("Quantos jogadores tem um time de futebol em campo?\n")
+                escreva("A) 67\n")
+                escreva("B) 12\n")
+                escreva("C) 11\n")
+                escreva("D) 9\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 10
+                  escreva("Correto! +10 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era C) 11\n")
+                }
+              }
+
+              se(pergunta == 3){
+                escreva("===== PERGUNTA 3 =====\n")
+                escreva("Qual pais sediou a Copa do Mundo de 2014?\n")
+                escreva("A) Africa do Sul\n")
+                escreva("B) Russia\n")
+                escreva("C) Qatar\n")
+                escreva("D) Brasil\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "D" ou resposta == "d"){
+                  pontuacao = pontuacao + 10
+                  escreva("Correto! +10 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era D) Brasil\n")
+                }
+              }
+
+              se(pergunta == 4){
+                escreva("===== PERGUNTA 4 =====\n")
+                escreva("Qual jogador e conhecido como CR7?\n")
+                escreva("A) Flavio caça-rato\n")
+                escreva("B) Ronaldo Nazario\n")
+                escreva("C) Cristiano Ronaldo\n")
+                escreva("D) Robinho \n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 10
+                  escreva("Correto!\nsei que você estava em duvida com o caça-rato nessa. +10 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era C) Cristiano Ronaldo\n")
+                }
+              }
+
+              se(pergunta == 5){
+                escreva("===== PERGUNTA 5 =====\n")
+                escreva("(DOBRO DE PONTOS!) Qual clube ganhou o primeiro MUNDIAL de clubes em 1962?\n")
+                escreva("A) Real madrid\n")
+                escreva("B) Milan\n")
+                escreva("C) Santos\n")
+                escreva("D) Boca juniors \n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 10
+                  escreva("Correto! o santos é foda galera. +10 pontos\n")
+                }senao{
+                  escreva(" VOCÊ ERROU! Santos ganhou 2 mundiais seguidos! Algo nunca repetido por NENHUM outro clube brasileiro. resposta certa era C) Santos\n")
+                }
+              }
+
+              pergunta = pergunta + 1
+              escreva(" (para continuar digite 0 e pressione ENTER): ")
+              leia(opcao)
+              limpa()
+            }
+          }
+
+          // ========== PERGUNTAS MODO MEDIO ==========
+          se(dificuldade == 2){
+            enquanto(pergunta <= 5){
+              limpa()
+
+              se(pergunta == 1){
+                escreva("===== PERGUNTA 1 =====\n")
+                escreva("Quantas Copas do Mundo o Brasil ganhou?\n")
+                escreva("A) 4\n")
+                escreva("B) 6\n")
+                escreva("C) 5\n")
+                escreva("D) 3\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 20
+                  escreva("Correto! +20 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era C) 5\n")
+                }
+              }
+
+              se(pergunta == 2){
+                escreva("===== PERGUNTA 2 =====\n")
+                escreva("Quem marcou o gol do penta brasileiro em 2002?\n")
+                escreva("A) Rivaldo\n")
+                escreva("B) Ronaldinho\n")
+                escreva("C) Ronaldo\n")
+                escreva("D) Ribamar (ex vasco)\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 20
+                  escreva("Correto!\nporem muitos tem a falsa lembrança do ribamar fazendo esse grande feito. +20 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era C) Ronaldo\n")
+                }
+              }
+
+              se(pergunta == 3){
+                escreva("===== PERGUNTA 3 =====\n")
+                escreva("(DOBRO DE PONTOS!) Qual estadio é o maior do mundo em capacidade? (tem um que é pegadinha kk)\n")
+                escreva("A) Estadio do flamengo\n")
+                escreva("B) Camp Nou\n")
+                escreva("C) Santiago Bernabéu\n")
+                escreva("D) Rungrado\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "D" ou resposta == "d"){
+                  pontuacao = pontuacao + 40
+                  escreva("Correto! +40 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era D) Rungrado\n")
+                }
+              }
+
+              se(pergunta == 4){
+                escreva("===== PERGUNTA 4 =====\n")
+                escreva("Qual jogador e o maior artilheiro da historia das Copas?\n")
+                escreva("A) Pele\n")
+                escreva("B) Cristiano Ronaldo\n")
+                escreva("C) Klose\n")
+                escreva("D) Gerd Muller\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 20
+                  escreva("Correto! +20 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era C) Miroslav Klose\n")
+                }
+              }
+
+              se(pergunta == 5){
+                escreva("===== PERGUNTA 5 =====\n")
+                escreva("Em que ano foi fundado o Flamengo? \n")
+                escreva("A) 2019\n")
+                escreva("B) 1900\n")
+                escreva("C) 1911\n")
+                escreva("D) 1895\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "C" ou resposta == "c"){
+                  pontuacao = pontuacao + 20
+                  escreva("Correto! +20 pontos\n")
+                }senao{
+                  escreva("que pena... você ERROU! o flamengo foi criado em 1911, mesmo assim algumas pessoas só conhecerram  ele em 2019 mesmo. A resposta certa era C) 1911\n")
+                }
+              }
+
+              pergunta = pergunta + 1
+              escreva(" (para continuar digite 0 e pressione ENTER): ")
+              leia(opcao)
+              limpa()
+            }
+          }
+
+          // ========== PERGUNTAS MODO DIFICIL ==========
+          se(dificuldade == 3){
+            enquanto(pergunta <= 5){
+              limpa()
+
+              se(pergunta == 1){
+                escreva("===== PERGUNTA 1 =====\n")
+                escreva("Qual jogador ganhou mais Bolas de Ouro na historia?\n")
+                escreva("A) Cristiano Ronaldo\n")
+                escreva("B) Lionel Messi\n")
+                escreva("C) Ronaldo Nazario\n")
+                escreva("D) Roberto Dinamite\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "B" ou resposta == "b"){
+                  pontuacao = pontuacao + 30
+                  escreva("Correto! +30 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era B) Lionel Messi\n")
+                }
+              }
+
+              se(pergunta == 2){
+                escreva("===== PERGUNTA 2 =====\n")
+                escreva("(DOBRO DE PONTOS) Qual foi a maior goleada da historia das Copas do Mundo?\n")
+                escreva("A) Brasil x Alemanha\n")
+                escreva("B) Hungria x El Salvador\n")
+                escreva("C) Alemanha x Arabia Saudita\n")
+                escreva("D) Yugoslavia x Zaire\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "B" ou resposta == "b"){
+                  pontuacao = pontuacao + 60
+                  escreva("Correto! colou certeza... +60 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era B) Hungria 10x1 El Salvador, mas quem que lembra disso tambem né?!\n")
+                }
+              }
+
+              se(pergunta == 3){
+                escreva("===== PERGUNTA 3 =====\n")
+                escreva("Qual clube tem mais titulos na Champions League?\n")
+                escreva("A) Barcelona\n")
+                escreva("B) Milan\n")
+                escreva("C) Bayern de Munique\n")
+                escreva("D) Real Madrid\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "D" ou resposta == "d"){
+                  pontuacao = pontuacao + 30
+                  escreva("Correto! por incrivel que pareça não foi o vasco. +30 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era D) Real Madrid\n")
+                }
+              }
+
+              se(pergunta == 4){
+                escreva("===== PERGUNTA 4 =====\n")
+                escreva("Quem marcou o gol mais rapido da historia das Copas?\n")
+                escreva("A) Hakan Sukur\n")
+                escreva("B) Cristiano Ronaldo\n")
+                escreva("C) Klose\n")
+                escreva("D) Ronaldo Nazario\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "A" ou resposta == "a"){
+                  pontuacao = pontuacao + 30
+                  escreva("Correto! +30 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era A) Hakan Sukur\n")
+                }
+              }
+
+              se(pergunta == 5){
+                escreva("===== PERGUNTA 5 =====\n")
+                escreva("Em qual Copa do Mundo Pele foi campeao pela primeira vez?\n")
+                escreva("A) 1962\n")
+                escreva("B) 1958\n")
+                escreva("C) 1970\n")
+                escreva("D) 1966\n")
+                escreva("Resposta (A-D): ")
+                leia(resposta)
+                se(resposta == "B" ou resposta == "b"){
+                  pontuacao = pontuacao + 30
+                  escreva("Correto! +30 pontos\n")
+                }senao{
+                  escreva("Errado! A resposta certa era B) 1958\n")
+                }
+              }
+
+              pergunta = pergunta + 1
+              escreva("para continuar digite 0 e pressione ENTER): ")
+              leia(opcao)
+              limpa()
+            }
+          }
+
+          limpa()
+          escreva("\n===== FIM DO QUIZ =====\n")
+          escreva("parabens Jogador: ", nome, "\n")
+          escreva("Pontuacao final: ", pontuacao, " pontos\n")
+          escreva("Acho que esse quiz merece nota maxima em... \n")
+          escreva("========================\n")
+          escreva("Pressione ENTER para voltar ao menu (digite 0): ")
+          leia(opcao)
+          limpa()
+
+        pare
+
+        caso 2:
+          escreva("===== RANK =====\n")
+          escreva("1o Carlos67 - 250 pontos\n")
+          escreva("2o Capitao Fariseu - 180 pontos\n")
+          escreva("3o Arrascabeca - 120 pontos\n")
+          escreva(nome, " - ", pontuacao, " pontos\n")
+          escreva("\nPressione ENTER para voltar (digite 0): ")
+          leia(opcao)
+          limpa()
+        pare
+
+        caso 3:
+          inteiro opcaoConfig = 0
+          escreva("===== CONFIGURACAO =====\n")
+          escreva("1 - Idioma\n")
+          escreva("2 - Volume\n")
+          escreva("Escolha uma opcao: ")
+          leia(opcaoConfig)
+
+          escolha(opcaoConfig){
+            caso 1:
+              inteiro idiomaEscolha = 0
+              escreva("===== IDIOMA =====\n")
+              escreva("1 - Portugues\n")
+              escreva("2 - Ingles\n")
+              leia(idiomaEscolha)
+              escolha(idiomaEscolha){
+                caso 1:
+                  idioma = "Portugues"
+                  escreva("Idioma alterado para Portugues!\n")
+                pare
+                caso 2:
+                  idioma = "Ingles"
+                  escreva("Tem não kkkk, da uma folga pro DEV chefe, só na proxima atualização.\n")
+                pare
+              }
+            pare
+            caso 2:
+              se(volume == "ON"){
+                volume = "OFF"
+              }senao{
+                volume = "ON"
+              }
+              escreva("Volume: ", volume, "\n")
+            pare
+          }
+          escreva("Pressione ENTER para voltar (digite 0): ")
+          leia(opcao)
+          limpa()
+        pare
+
+        caso 4:
+          limpa()
+          inteiro voltar = 0
+          enquanto(voltar != 7){
+            escreva("===== REGRAS =====\n")
+            escreva("1 - Escolha uma dificuldade antes de jogar.\n")
+            escreva("2 - Responda as perguntas corretamente.\n")
+            escreva("3 - Quanto maior a dificuldade,\n")
+            escreva("    maior sera a pontuacao obtida.\n")
+            escreva("4 - Cada pergunta vale uma quantidade\n")
+            escreva("    diferente de pontos:\n")
+            escreva("    Facil = 10pts, Medio = 20pts, Dificil = 30pts\n")
+            escreva("5 - O objetivo e fazer a maior\n")
+            escreva("    pontuacao possivel.\n")
+            escreva("6 - Consulte o Rank para comparar\n")
+            escreva("    sua pontuacao.\n\n")
+            escreva("7 - Voltar ao menu\n")
+            leia(voltar)
+          }
+          limpa()
+        pare
+
+        caso 5:
+          escreva("================================\n")
+          escreva("Obrigado por jogar, professor gabriel preciso de nota!\n")
+          escreva("Saindo do programa...\n")
+          escreva("================================\n")
+        pare
+
+      }
+    }
+  }
+}
